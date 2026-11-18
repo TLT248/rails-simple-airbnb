@@ -1,0 +1,35 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Flats" %>
+
+<div class="m-5">
+  <h1>All our flats</h1>
+  <p>We currently have <%= Flat.all.size %> flats available</p>
+
+  <div id="flats" class="container row gap-2">
+
+    <% @flats.each do |flat| %>
+
+      <div class="card col-3">
+        <img src="https://cdn.prod.website-files.com/69c65157d4dfe8e40bee0fdb/69c6b20774352fe8b931a05c_3W8A5494%20appartement%20203%20bd%202.jpg" class="card-img-top cover" alt="...">
+
+        <div class="card-body">
+          <h5 class="card-title"><%= flat.name %></h5>
+          <p class="card-text"><%= flat.address %></p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><%= flat.price_per_night %>€ per night</li>
+          <li class="list-group-item"><%= flat.number_of_guests %> beds</li>
+        </ul>
+        <div class="card-body d-flex justify-content-between">
+          <%= link_to "Show this flat", flat %>
+          <a href="#" class="card-link">Edit</a>
+          <a href="#" class="card-link">Remove</a>
+        </div>
+      </div>
+
+    <% end %>
+
+  </div>
+
+</div>

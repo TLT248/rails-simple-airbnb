@@ -7,3 +7,21 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+
+require 'faker'
+
+puts "Destroys all Flats"
+Flat.destroy_all
+
+puts "Create 5 new random Flats"
+5.times do
+  flat = Flat.new(
+    name: Faker::Restaurant.name,
+    address: Faker::Address.full_address,
+    description: Faker::Lorem.paragraph(sentence_count: 30),
+    price_per_night: rand(100..500),
+    number_of_guests: rand(6)
+  )
+  flat.save
+end

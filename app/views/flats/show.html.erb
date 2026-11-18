@@ -1,0 +1,39 @@
+<p style="color: green"><%= notice %></p>
+
+<div class="cover"></div>
+
+<div id="position">
+  <div id="big-container" class="row p-5">
+
+    <div id="container-left" class="col-8 gap-3">
+      <div class="grey-box">
+        <h2><%= @flat.name %></h2>
+        <p><%= @flat.address %></p>
+      </div>
+      <div class="mt-3 grey-box">
+        <h5>A bit more about this place : </h5>
+        <p><%= @flat.description %></p>
+      </div>
+      <div class="mt-3 grey-box">
+        <%= link_to "Edit this flat", edit_flat_path(@flat) %> |
+        <%= link_to "Back to flats", flats_path %>
+        <%= button_to "Destroy this flat", @flat, method: :delete %>
+      </div>
+    </div>
+
+    <div id="container-right" class="col-4">
+      <div class="grey-box">
+        <h5>Book this place</h5>
+        <input type="text" class="w-100 mt-2">
+        <input type="text" class="w-100 mt-2">
+        <a href="#" class="btn btn-success w-100 mt-2">Book</a>
+      </div>
+      <div class="grey-box mt-3">
+        <h5>Details</h5>
+        <p><%= @flat.price_per_night %>€ per night</p>
+        <p><%= @flat.number_of_guests %> beds</p>
+      </div>
+    </div>
+
+  </div>
+</div>

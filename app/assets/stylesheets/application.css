@@ -8,3 +8,22 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+
+ .cover {
+  background-image: url('https://media.admagazine.fr/photos/64f9d1f479b9c23fa1fe7d02/16:9/w_2560%2Cc_limit/DSC07843.jpg');
+  background-size: cover;
+  align-items: center;
+  height: 500px;
+ }
+
+ .grey-box{
+  background-color: rgb(242, 242, 242);
+  border-radius: 5px;
+  padding: 20px;
+ }
+
+ #big-container {
+  position: relative;
+  top: -100px;
+
+ }
